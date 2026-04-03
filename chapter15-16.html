@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENT 301 - Chapter 15 & 16: Expansion & Transition to Growth</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+            --whatsapp-color: #25D366;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            padding-top: 60px; /* Space for fixed navbar */
+        }
+        
+        /* Fixed Top Navigation */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 10px 20px;
+            align-items: center;
+        }
+        .top-nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            padding: 8px 15px;
+            margin-right: 10px;
+            border-radius: 20px;
+            background-color: var(--bg-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background 0.2s, color 0.2s;
+        }
+        .top-nav a:hover, .top-nav a.active {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        /* Summary Content Area */
+        .content-area {
+            background-color: #fffaf0;
+            padding: 20px;
+            border-left: 4px solid var(--primary-color);
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        /* CBT Section */
+        .cbt-section {
+            background-color: #eef2f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .question-block {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .btn-submit, .btn-retake {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-right: 10px;
+        }
+        .btn-retake {
+            background-color: #6c757d;
+        }
+        .btn-submit:hover { background-color: #004494; }
+        .btn-retake:hover { background-color: #5a6268; }
+        
+        #result-display {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--whatsapp-color);
+            color: #fff;
+            border-radius: 50px;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-nav">
+    <a href="index.html">🏠 Home</a>
+    <a href="chapter1.html">Ch 1</a>
+    <a href="chapter2.html">Ch 2</a>
+    <a href="chapter3.html">Ch 3</a>
+    <a href="chapter4.html">Ch 4</a>
+    <a href="chapter5.html">Ch 5</a>
+    <a href="chapter6.html">Ch 6</a>
+    <a href="chapter7.html">Ch 7</a>
+    <a href="chapter8.html">Ch 8</a>
+    <a href="chapter9.html">Ch 9</a>
+    <a href="chapter10a.html">Ch 10A</a>
+    <a href="chapter10b.html">Ch 10B</a>
+    <a href="chapter11.html">Ch 11</a>
+    <a href="chapter12.html">Ch 12</a>
+    <a href="chapter13.html">Ch 13</a>
+    <a href="chapter14.html">Ch 14</a>
+    <a href="chapter15-16.html" class="active">Ch 15/16</a>
+</div>
+
+<header>
+    <h1>ENT 301: Essentials of Entrepreneurship</h1>
+    <p>Chapter 15 & 16: Expansion & Transitioning to Growth</p>
+</header>
+
+<div class="container">
+    
+    <h2>Chapter Summary</h2>
+    <div class="content-area">
+        <p><em>(Paste the summary, points to note, and mnemonics for Chapters 15 & 16 here once generated...)</em></p>
+    </div>
+
+    <div class="cbt-section">
+        <h2>Practice CBT (60 Questions)</h2>
+        <p><em>Questions are shuffled. Fill-in-the-gap answers will auto-capitalize when you submit.</em></p>
+        
+        <form id="quiz-form">
+            <div id="quiz-container">
+                </div>
+            <button type="button" class="btn-submit" onclick="submitQuiz()">Submit Answers</button>
+            <button type="button" class="btn-retake" onclick="renderQuiz()">Retake CBT</button>
+        </form>
+        <div id="result-display"></div>
+    </div>
+</div>
+
+<a href="https://wa.me/2347050376975?text=Hello%20O'YEMI,%20I%20have%20a%20question%20about%20ENT%20301%20Chapters%2015%20and%2016..." target="_blank" class="whatsapp-float">
+    💬 Ask Ó'YẸMÍ
+</a>
+
+<footer>
+    <p>Designed and Built by <strong>Abideen Yakub Opeyemi (Ó'YẸMÍ)</strong> | 📞 07050376975</p>
+</footer>
+
+<script>
+    // ==========================================
+    // INSERT YOUR 200 QUESTION BANK HERE
+    // Leave fill-in-the-gap answers as normal text, 
+    // the system will handle the uppercase matching.
+    // ==========================================
+    const questionBank = [
+        
+        // I have left 3 placeholder questions here just so the page works when you test it.
+        // You can delete these 3 and paste your real 200 questions right here later!
+
+        {
+            id: 1,
+            type: "mcq",
+            question: "Which of the following represents an opportunity for business expansion?",
+            options: ["Reducing the workforce", "Franchising", "Limiting product lines", "Ignoring market trends"],
+            answer: "Franchising"
+        },
+        {
+            id: 2,
+            type: "tf",
+            question: "As a startup transitions into a growth phase, the founder must often learn to delegate tasks.",
+            answer: "True"
+        },
+        {
+            id: 3,
+            type: "fill",
+            question: "The process of a company increasing its size, revenue, or market share is called __________.",
+            answer: "expansion" 
+        }
+
+    ];
+
+    let currentSessionQuestions = [];
+
+    // Shuffle Function
+    function shuffleArray(array) {
+        let shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    }
+
+    // Render Quiz to Screen
+    function renderQuiz() {
+        // Reset Result display
+        document.getElementById('result-display').innerHTML = "";
+        document.getElementById('result-display').style.color = "#333";
+
+        // Shuffle bank and take up to 60 questions
+        currentSessionQuestions = shuffleArray(questionBank).slice(0, 60);
+
+        const container = document.getElementById('quiz-container');
+        container.innerHTML = ''; 
+
+        currentSessionQuestions.forEach((q, index) => {
+            const questionBlock = document.createElement('div');
+            questionBlock.classList.add('question-block');
+            
+            let htmlContent = `<div class="question-text">${index + 1}. ${q.question}</div>`;
+
+            if (q.type === 'mcq') {
+                htmlContent += `<div class="options">`;
+                // Shuffle options for MCQ
+                let shuffledOptions = shuffleArray(q.options);
+                shuffledOptions.forEach(opt => {
+                    htmlContent += `
+                        <label>
+                            <input type="radio" name="q_${q.id}" value="${opt}">
+                            ${opt}
+                        </label>
+                    `;
+                });
+                htmlContent += `</div>`;
+            } else if (q.type === 'tf') {
+                htmlContent += `
+                    <div class="options">
+                        <label><input type="radio" name="q_${q.id}" value="True"> True</label>
+                        <label><input type="radio" name="q_${q.id}" value="False"> False</label>
+                    </div>
+                `;
+            } else if (q.type === 'fill') {
+                htmlContent += `<input type="text" id="input_${q.id}" name="q_${q.id}" placeholder="Type your one-word answer here">`;
+            }
+
+            questionBlock.innerHTML = htmlContent;
+            container.appendChild(questionBlock);
+        });
+    }
+
+    // Calculate Score & Transform Text
+    function submitQuiz() {
+        let score = 0;
+        const form = document.forms['quiz-form'];
+
+        currentSessionQuestions.forEach(q => {
+            const userAnswerElement = form.elements[`q_${q.id}`];
+            let userAnswer = '';
+
+            if (q.type === 'mcq' || q.type === 'tf') {
+                userAnswer = userAnswerElement.value;
+                if (userAnswer === q.answer) {
+                    score++;
+                }
+            } else if (q.type === 'fill') {
+                // Get element by ID for styling
+                const inputField = document.getElementById(`input_${q.id}`);
+                let rawAnswer = userAnswerElement.value.trim();
+                
+                // 1. Visually transform text to UPPERCASE
+                inputField.value = rawAnswer.toUpperCase(); 
+                userAnswer = rawAnswer.toUpperCase();
+                
+                // 2. Format correct answer to UPPERCASE for comparison
+                let correctAnswer = q.answer.toUpperCase();
+
+                // 3. Compare and add visual feedback
+                if (userAnswer === correctAnswer && userAnswer !== "") {
+                    score++;
+                    inputField.style.border = "2px solid #28a745"; 
+                    inputField.style.backgroundColor = "#e8f5e9"; 
+                } else {
+                    inputField.style.border = "2px solid #dc3545"; 
+                    inputField.style.backgroundColor = "#ffebee"; 
+                }
+            }
+        });
+
+        // Display Score
+        const total = currentSessionQuestions.length;
+        const percentage = total > 0 ? ((score / total) * 100).toFixed(1) : 0;
+        
+        const resultDisplay = document.getElementById('result-display');
+        resultDisplay.innerHTML = `You scored ${score} out of ${total} (${percentage}%)!`;
+        
+        if(percentage >= 70) {
+            resultDisplay.style.color = "#28a745"; // Green if pass
+        } else {
+            resultDisplay.style.color = "#dc3545"; // Red if fail
+        }
+        
+        resultDisplay.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Load first practice on page load
+    window.onload = renderQuiz;
+</script>
+</body>
+</html>
