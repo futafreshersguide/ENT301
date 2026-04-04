@@ -1654,6 +1654,9 @@
         // Reset Result display
         document.getElementById('result-display').innerHTML = "";
         document.getElementById('result-display').style.color = "#333";
+        
+        // UNHIDE THE SUBMIT BUTTON FOR RETAKES
+        document.querySelector('.btn-submit').style.display = 'inline-block';
 
         // Shuffle bank and take up to 60 questions
         currentSessionQuestions = shuffleArray(questionBank).slice(0, 60);
@@ -1696,7 +1699,7 @@
         });
     }
 
-   // Calculate Score & Show Correct Answers
+    // Calculate Score & Show Correct Answers
     function submitQuiz() {
         let score = 0;
         const form = document.forms['quiz-form'];
@@ -1787,6 +1790,7 @@
         
         resultDisplay.scrollIntoView({ behavior: 'smooth' });
     }
+
     // Load first practice on page load
     window.onload = renderQuiz;
 </script>
