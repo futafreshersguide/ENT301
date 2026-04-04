@@ -224,35 +224,10 @@
 
 <script>
     // ==========================================
-    // INSERT YOUR 200 QUESTION BANK HERE
-    // Leave fill-in-the-gap answers as normal text, 
-    // the system will handle the uppercase matching.
+    // INSERT YOUR QUESTION BANK HERE
     // ==========================================
     const questionBank = [
-        
-        // I have left 3 placeholder questions here just so the page works when you test it.
-        // You can delete these 3 and paste your real 200 questions right here later!
-
-        {
-            id: 1,
-            type: "mcq",
-            question: "Which of the following is typically the first step in creating a new venture?",
-            options: ["Hiring employees", "Idea generation", "Securing a bank loan", "Renting office space"],
-            answer: "Idea generation"
-        },
-        {
-            id: 2,
-            type: "tf",
-            question: "New venture creation process ends once the business is officially registered.",
-            answer: "False"
-        },
-        {
-            id: 3,
-            type: "fill",
-            question: "A formal written statement of a new venture's goals, reasons they are attainable, and plans for reaching them is called a business __________.",
-            answer: "plan" 
-        }
-
+        // (Paste your 200 questions here!)
     ];
 
     let currentSessionQuestions = [];
@@ -272,6 +247,9 @@
         // Reset Result display
         document.getElementById('result-display').innerHTML = "";
         document.getElementById('result-display').style.color = "#333";
+        
+        // UNHIDE THE SUBMIT BUTTON FOR RETAKES
+        document.querySelector('.btn-submit').style.display = 'inline-block';
 
         // Shuffle bank and take up to 60 questions
         currentSessionQuestions = shuffleArray(questionBank).slice(0, 60);
@@ -314,7 +292,7 @@
         });
     }
 
-// Calculate Score & Show Correct Answers
+    // Calculate Score & Show Correct Answers
     function submitQuiz() {
         let score = 0;
         const form = document.forms['quiz-form'];
@@ -405,6 +383,7 @@
         
         resultDisplay.scrollIntoView({ behavior: 'smooth' });
     }
+
     // Load first practice on page load
     window.onload = renderQuiz;
 </script>
