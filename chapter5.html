@@ -224,35 +224,10 @@
 
 <script>
     // ==========================================
-    // INSERT YOUR 200 QUESTION BANK HERE
-    // Leave fill-in-the-gap answers as normal text, 
-    // the system will handle the uppercase matching.
+    // INSERT YOUR QUESTION BANK HERE
     // ==========================================
     const questionBank = [
-        
-        // I have left 3 placeholder questions here just so the page works when you test it.
-        // You can delete these 3 and paste your real 200 questions right here later!
-
-        {
-            id: 1,
-            type: "mcq",
-            question: "What is the process of translating an idea or invention into a good or service that creates value?",
-            options: ["Creativity", "Innovation", "Invention", "Marketing"],
-            answer: "Innovation"
-        },
-        {
-            id: 2,
-            type: "tf",
-            question: "Innovation only happens in large technology companies.",
-            answer: "False"
-        },
-        {
-            id: 3,
-            type: "fill",
-            question: "The successful exploitation of new ideas is called __________.",
-            answer: "innovation" 
-        }
-
+        // (Paste your 200 questions here!)
     ];
 
     let currentSessionQuestions = [];
@@ -272,6 +247,9 @@
         // Reset Result display
         document.getElementById('result-display').innerHTML = "";
         document.getElementById('result-display').style.color = "#333";
+        
+        // UNHIDE THE SUBMIT BUTTON FOR RETAKES
+        document.querySelector('.btn-submit').style.display = 'inline-block';
 
         // Shuffle bank and take up to 60 questions
         currentSessionQuestions = shuffleArray(questionBank).slice(0, 60);
@@ -314,7 +292,7 @@
         });
     }
 
-    // Calculate Score & Transform Text
+    // Calculate Score & Show Correct Answers
     function submitQuiz() {
         let score = 0;
         const form = document.forms['quiz-form'];
@@ -324,23 +302,50 @@
             let userAnswer = '';
 
             if (q.type === 'mcq' || q.type === 'tf') {
-                userAnswer = userAnswerElement.value;
+                // For MCQ and True/False
+                userAnswer = userAnswerElement ? userAnswerElement.value : '';
+                
+                // Get the container for the options to apply styling
+                const optionsDiv = document.querySelector(`input[name="q_${q.id}"]`).closest('.options');
+                const labels = optionsDiv.querySelectorAll('label');
+                
+                labels.forEach(label => {
+                    const radio = label.querySelector('input');
+                    radio.disabled = true; // Disable buttons after submission
+                    
+                    // Highlight correct and wrong answers
+                    if (radio.value === q.answer) {
+                        label.style.color = "#28a745"; // Green for correct
+                        label.style.fontWeight = "bold";
+                    } else if (radio.checked && radio.value !== q.answer) {
+                        label.style.color = "#dc3545"; // Red for wrong selection
+                        label.style.textDecoration = "line-through";
+                    }
+                });
+
+                // Calculate Score and check if left blank
                 if (userAnswer === q.answer) {
                     score++;
+                } else if (!userAnswer) {
+                    // Tell them the correct answer if they didn't pick anything
+                    const missedMsg = document.createElement('div');
+                    missedMsg.style.color = "#dc3545";
+                    missedMsg.style.fontSize = "0.9rem";
+                    missedMsg.style.marginTop = "5px";
+                    missedMsg.innerHTML = `<em>You didn't select an answer.</em>`;
+                    optionsDiv.appendChild(missedMsg);
                 }
+
             } else if (q.type === 'fill') {
-                // Get element by ID for styling
+                // For Fill in the gap
                 const inputField = document.getElementById(`input_${q.id}`);
+                inputField.disabled = true; // Disable input
                 let rawAnswer = userAnswerElement.value.trim();
                 
-                // 1. Visually transform text to UPPERCASE
                 inputField.value = rawAnswer.toUpperCase(); 
                 userAnswer = rawAnswer.toUpperCase();
-                
-                // 2. Format correct answer to UPPERCASE for comparison
                 let correctAnswer = q.answer.toUpperCase();
 
-                // 3. Compare and add visual feedback
                 if (userAnswer === correctAnswer && userAnswer !== "") {
                     score++;
                     inputField.style.border = "2px solid #28a745"; 
@@ -348,9 +353,20 @@
                 } else {
                     inputField.style.border = "2px solid #dc3545"; 
                     inputField.style.backgroundColor = "#ffebee"; 
+                    
+                    // Reveal the correct answer below the input field
+                    const correctDisplay = document.createElement('div');
+                    correctDisplay.style.color = "#28a745";
+                    correctDisplay.style.fontSize = "0.9rem";
+                    correctDisplay.style.marginTop = "5px";
+                    correctDisplay.innerHTML = `<strong>Correct Answer:</strong> ${correctAnswer}`;
+                    inputField.parentNode.appendChild(correctDisplay);
                 }
             }
         });
+
+        // Hide submit button to prevent double-clicking
+        document.querySelector('.btn-submit').style.display = 'none';
 
         // Display Score
         const total = currentSessionQuestions.length;
