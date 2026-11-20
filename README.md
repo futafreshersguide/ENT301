@@ -4,9 +4,11 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
-A lightweight, interactive e-learning web application designed to help university students master the "Essentials of Entrepreneurship" (ENT 301) course. 
+A lightweight, interactive e-learning web application designed to help university students ma3ster the "Essentials of Entrepreneurship" (ENT 301) course. 
 
 ## 🚀 Live Demo
+**Access the live study portal here:** [https://futafreshersguide.github.io/ENT301/](https://futaent301.netlify.app/)
+or
 **Access the live study portal here:** [https://futafreshersguide.github.io/ENT301/](https://futafreshersguide.github.io/ENT301/)
 
 ## 💡 The Motivation
