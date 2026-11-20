@@ -7,9 +7,11 @@
 A lightweight, interactive e-learning web application designed to help university students ma3ster the "Essentials of Entrepreneurship" (ENT 301) course. 
 
 ## 🚀 Live Demo
-**Access the live study portal here:** [https://futafreshersguide.github.io/ENT301/](https://futaent301.netlify.app/)
-or
-**Access the live study portal here:** [https://futafreshersguide.github.io/ENT301/](https://futafreshersguide.github.io/ENT301/)
+**Access the live study portal here:** [https://futaent301.netlify.app/](https://futaent301.netlify.app/)
+
+OR
+
+**HERE:** [https://futafreshersguide.github.io/ENT301/](https://futafreshersguide.github.io/ENT301/)
 
 ## 💡 The Motivation
 The required textbook for this course is a massive 322 pages. For engineering students used to calculations, reading and cramming hundreds of pages of text is overwhelming. Furthermore, the exams include strict fill-in-the-gap questions requiring exact terminology. 
